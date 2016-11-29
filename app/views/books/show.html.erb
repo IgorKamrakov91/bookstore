@@ -1,2 +1,21 @@
-<h1>Books#show</h1>
-<p>Find me in app/views/books/show.html.erb</p>
+<div id="books-show">
+  <h2>Ruby on Rails Power</h2>
+  <div class="books-show-left">
+    <%= image_tag('ruby_on_rails_power.jpg')  %>
+  </div>
+  <div class="book-show-right">
+    <h3>Book Info:</h3>
+    <ul>
+      <li><strong>Category: </strong>Ruby on rails</li>
+      <li><strong>Author: </strong>Aneesha Backheera</li>
+      <li><strong>Year: </strong>2014</li>
+      <li><strong>Publisher: </strong>Course Technology PTR</li>
+    </ul>
+    <%= link_to 'Buy on eBay', 'https://www.amazon.com/Ruby-Rails-Power-Comprehensive-Guide/dp/1598632167',class: "btn btn-success", target: '_blank' %>
+  </div>
+  <div class="clearfix"></div>
+  <h4>Description:</h4>
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  </p>
+</div>
