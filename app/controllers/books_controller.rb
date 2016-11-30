@@ -19,12 +19,28 @@ class BooksController < ApplicationController
   end
 
   def update
+    @book = Book.find(params[:id])
+    if @book.update_attributes(book_params)
+      flash[:notice] = "Book #{@book.title} Successfully updated"
+      redirect_to root_path
+    else
+      flash[:alert] = "Sorry, #{@book.title} ot updated."
+      render 'edit'
+    end
   end
 
   def edit
+    @book = Book.find(params[:id])
+    @categories = Category.all
+    @authors = Author.all
+    @publishers = Publisher.all
   end
 
   def destroy
+    @book = Book.find(params[:id])
+    @book.destroy
+    flash[:notice] = "Book #{@book.title}, successfully deleted!"
+    redirect_to root_path
   end
 
   def index
