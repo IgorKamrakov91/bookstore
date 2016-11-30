@@ -29,9 +29,13 @@ class BooksController < ApplicationController
 
   def index
     @books = Book.all
+    @categories = Category.all
   end
 
   def show
+    @book = Book.find(params[:id])
+    @bookname = @book.author.first_name + ' ' + @book.author.last_name
+    @categories = Category.all
   end
 
   private

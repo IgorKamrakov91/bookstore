@@ -10,9 +10,8 @@
 <% end %>
 <% if params[:controller] == 'books' && params[:action] == 'index' || 'show' %>
   <div class="list-group">
-    <a href="#" class="list-group-item">Ruby on Rails</a>
-    <a href="#" class="list-group-item">Java</a>
-    <a href="#" class="list-group-item">Ajax</a>
-    <a href="#" class="list-group-item">PHP</a>
+    <% @categories.each do |category| %>
+      <%= link_to category.name, category_path(category.id), class: 'list-group-item' %>
+    <% end %>
   </div>
 <% end %>
